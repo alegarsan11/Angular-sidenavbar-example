@@ -1,0 +1,104 @@
+  /* FORZAMOS EL FONDO EN EL CONTENEDOR RAÍZ */
+  .main-container {
+    position: fixed;
+    /* Ocupa toda la pantalla fija */
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #f0f2f5 !important;
+    /* El color de fondo que buscabas */
+    font-family: 'Segoe UI', Roboto, sans-serif;
+  }
+
+  mat-sidenav-content {
+    background-color: #f0f2f5 !important;
+    /* Asegura el fondo en el área de contenido */
+  }
+
+  /* PANEL LATERAL */
+  .side-nav-panel {
+    width: 300px;
+    background: white;
+    box-shadow: 4px 0 10px rgba(0, 0, 0, 0.05);
+  }
+
+  .nav-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .nav-header {
+    background: #1a1a1a;
+    color: white;
+    padding: 30px 20px;
+    text-align: center;
+  }
+
+  .nav-pages-container {
+    flex: 1;
+    padding: 20px;
+  }
+
+  .nav-option {
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 8px;
+    cursor: pointer;
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    transition: background 0.2s;
+  }
+
+  .nav-option:active {
+    background: #f5f5f5;
+  }
+
+  /* DOTS PAGINACIÓN */
+  .nav-footer {
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    border-top: 1px solid #eee;
+  }
+
+  .dot {
+    width: 8px;
+    height: 8px;
+    background: #ddd;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  .dot.active {
+    background: #1a1a1a;
+    width: 18px;
+    border-radius: 10px;
+  }
+
+  /* LISTA DE TAREAS */
+  .top-bar {
+    background: white;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  }
+
+  .list-content {
+    padding: 20px;
+  }
+
+  .card {
+    background: white;
+    padding: 15px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+  }
