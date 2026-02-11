@@ -1,43 +1,33 @@
 <mat-sidenav-container class="main-container">
 
-  <mat-sidenav #sidenav mode="over" [(opened)]="opened" class="side-nav-panel">
-    <div class="nav-content" *ngIf="menuPages[currentPageIndex] as page">
+  <mat-sidenav #sidenav mode="over" [(opened)]="opened" class="side-nav">
+    <div class="nav-header">
+      <h3 style="margin:0">Menú Auto-Pagina</h3>
+      <small>Total de items: {{ allMenuItems.length }}</small>
+    </div>
 
-      <div class="nav-header">
-        <h3>Menú</h3>
-        <small>Página {{ currentPageIndex + 1 }} de {{ menuPages.length }}</small>
+    <div class="nav-body">
+      <div *ngFor="let item of visibleItems" class="menu-option">
+        {{ item.label }}
       </div>
+    </div>
 
-      <div class="nav-pages-container">
-        <h4 style="margin-bottom: 15px;">{{ page.title }}</h4>
-        <div *ngFor="let opt of page.options" class="nav-option" (click)="handleOptionClick(opt)">
-          {{ opt.label }}
-        </div>
+    <div class="nav-footer">
+      <div *ngFor="let p of totalPages; let i = index" class="dot" [class.active]="i === currentPageIndex"
+        (click)="setPage(i)">
       </div>
-
-      <div class="nav-footer">
-        <div *ngFor="let p of menuPages; let i = index" class="dot" [class.active]="i === currentPageIndex"
-          (click)="goToPage(i)">
-        </div>
-      </div>
-
     </div>
   </mat-sidenav>
 
   <mat-sidenav-content>
-    <div class="top-bar">
-      <button (click)="opened = true" style="background:none; border:none; font-size: 20px; cursor:pointer;">☰</button>
-      <strong>Mi Aplicación</strong>
+    <div class="toolbar">
+      <button (click)="opened = true" style="border:none; background:none; font-size:20px;">☰</button>
+      <strong style="margin-left: 10px;">Dashboard</strong>
     </div>
 
-    <div class="list-content">
-      <div *ngFor="let item of list" class="card">
-        <div style="margin-right: 15px; color: #4caf50;">●</div>
-        <div>
-          <div style="font-weight: 600;">{{ item.title }}</div>
-          <small style="color: #666;">{{ item.subTitle }}</small>
-        </div>
-      </div>
+    <div *ngFor="let t of list" class="card">
+      <strong>{{ t.title }}</strong><br>
+      <small>{{ t.subTitle }}</small>
     </div>
   </mat-sidenav-content>
 
